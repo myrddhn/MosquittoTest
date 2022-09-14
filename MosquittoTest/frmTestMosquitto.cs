@@ -30,25 +30,15 @@ namespace MosquittoTest
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            publish();
-        }
-
-        private void publish()
-        {
-
-            //mqttClient.ConnectedAsync += mqttClient_ConnectedAsync;
-            //mqttClient.DisconnectedAsync += mqttClient_DisconnectedAsync;
-            //mqttClient.ApplicationMessageReceivedAsync += MqttClient_ApplicationMessageReceivedAsync;
-
             var msg = new MqttApplicationMessageBuilder()
                     .WithTopic("andi/topic")
                     .WithPayload("Hello World " + new Random().Next().ToString())
                     .WithRetainFlag()
                     .Build();
 
-            mqttClient.PublishAsync(msg);
+            await mqttClient.PublishAsync(msg);
 
             Log.Logger.Information("MQTT application message is published.");
         }
@@ -127,9 +117,11 @@ namespace MosquittoTest
             return Task.CompletedTask;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            mqttClient.DisconnectAsync();
+            await mqttClient.DisconnectAsync();
+
+            Application.Exit();
         }
     }
 }

@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPub = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnPub
             // 
-            this.button1.Location = new System.Drawing.Point(142, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPub.Location = new System.Drawing.Point(142, 148);
+            this.btnPub.Name = "btnPub";
+            this.btnPub.Size = new System.Drawing.Size(75, 23);
+            this.btnPub.TabIndex = 0;
+            this.btnPub.Text = "Send";
+            this.btnPub.UseVisualStyleBackColor = true;
+            this.btnPub.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -50,24 +50,24 @@
             this.textBox1.Size = new System.Drawing.Size(249, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(142, 177);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Location = new System.Drawing.Point(142, 177);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmTestMosquitto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPub);
             this.Name = "frmTestMosquitto";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmTestMosquitto_Load);
@@ -78,9 +78,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPub;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
