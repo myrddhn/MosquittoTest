@@ -23,7 +23,8 @@ namespace MosquittoTest
     public partial class frmTestMosquitto : Form
     {
 
-        static IMqttClient mqttClient;
+        IMqttClient mqttClient;
+        IManagedMqttClient mqttSubClient;
 
         public frmTestMosquitto()
         {
@@ -34,8 +35,8 @@ namespace MosquittoTest
         {
             var msg = new MqttApplicationMessageBuilder()
                     .WithTopic("andi/topic")
-                    .WithPayload("Hello World " + new Random().Next().ToString())
-                    .WithRetainFlag()
+                    .WithPayload("Hello World " + new Random().Next().ToString() + " " + txtPayload.Text)
+                    //.WithRetainFlag()
                     .Build();
 
             await mqttClient.PublishAsync(msg);
@@ -76,7 +77,7 @@ namespace MosquittoTest
                         .WithClientOptions(builder.Build())
                         .Build();
 
-            IManagedMqttClient mqttSubClient = new MqttFactory().CreateManagedMqttClient();
+            mqttSubClient = new MqttFactory().CreateManagedMqttClient();
 
             mqttSubClient.ConnectedAsync += mqttClient_ConnectedAsync;
             mqttSubClient.DisconnectedAsync += mqttClient_DisconnectedAsync;
@@ -120,6 +121,7 @@ namespace MosquittoTest
         private async void button2_Click(object sender, EventArgs e)
         {
             await mqttClient.DisconnectAsync();
+            await mqttSubClient.StopAsync();
 
             Application.Exit();
         }

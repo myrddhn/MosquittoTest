@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnPub = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPayload = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,12 +43,12 @@
             this.btnPub.UseVisualStyleBackColor = true;
             this.btnPub.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtPayload
             // 
-            this.textBox1.Location = new System.Drawing.Point(400, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtPayload.Location = new System.Drawing.Point(400, 148);
+            this.txtPayload.Name = "txtPayload";
+            this.txtPayload.Size = new System.Drawing.Size(249, 20);
+            this.txtPayload.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -66,9 +66,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPayload);
             this.Controls.Add(this.btnPub);
             this.Name = "frmTestMosquitto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmTestMosquitto_Load);
             this.ResumeLayout(false);
@@ -79,7 +80,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnPub;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPayload;
         private System.Windows.Forms.Button btnClose;
     }
 }
